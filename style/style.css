@@ -101,7 +101,7 @@ main{
 }
 
 .boxTwo img{
-    width: 80%;
+    width: 100%;
 }
 
 .btnMain{
@@ -162,23 +162,147 @@ main{
     max-width: 80%;
 }
 
-
-
-@media (max-width: 768px){
-    .navBar li a{
-        font-size: .6em;
-    }
-    .btnNavBar{
-        width: 6em;
-        font-size: .6em;
-    }
-    .boxOne{
-        width: 75%;
-    }
-    .boxTwo{
-        width: 35%;
-    }
+.sectionThree{
+    text-align: center;
+    margin-top: 6em;
 }
+
+.titleSectionThree{
+    color: var(--secondary-color);
+    margin-bottom: 1.5em;
+    font-size: 2em;
+}
+
+.testimonials{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cardTestimonial{
+    width: 30%;
+}
+
+.cardTestimonial img{
+    width: 22%;
+}
+
+.cardTestimonial h4{
+    margin-top: .9em;
+    margin-bottom: 1.2em;
+}
+
+.cardTestimonial p{
+    font-size: .9em;
+    color: var(--options-color);
+    margin-bottom: 2.5em;
+}
+
+/* -------------------------------SLIDER------------------------------------------- */
+.slide {
+    position: relative;
+    margin-top: 26px;
+    display: none;
+}
+
+.slide-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: calc( 220px + 3em);
+}
+
+.slide-open:checked + .slide-item {
+    position: static;
+    opacity: 100;
+}
+
+.slide-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+    text-align: center;
+    width: 100%;
+    margin-left: 3em;
+}
+
+.slide-control {
+    background: rgba(241, 102, 9, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.slide-control.prev {
+    left: 2%;
+}
+
+.slide-control.next {
+    right: 2%;
+}
+
+.slide-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#slide-1:checked ~ .control-1,
+#slide-2:checked ~ .control-2,
+#slide-3:checked ~ .control-3 {
+    display: block;
+}
+
+.slide-indicador {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.slide-indicador li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slide-circulo {
+    color: #828282;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.slide-circulo:hover {
+    color: #aaaaaa;
+}
+
+#slide-1:checked ~ .control-1 ~ .slide-indicador 
+     li:nth-child(1) .slide-circulo,
+#slide-2:checked ~ .control-2 ~ .slide-indicador 
+      li:nth-child(2) .slide-circulo,
+#slide-3:checked ~ .control-3 ~ .slide-indicador 
+      li:nth-child(3) .slide-circulo {
+    color: var(--main-color);
+}
+
+
 
 
 @media (max-width: 480px){
@@ -219,8 +343,8 @@ main{
     }
 
     .boxOne h1{
-        width: 95%;
-        font-size: 2.8em;
+        width: 100%;
+        font-size: 2.4em;
         margin: 0;
     }
 
@@ -251,9 +375,7 @@ main{
         color: var(--options-color);
         width: 100%;
     }
-
-
-    
+  
     .options{
         margin-top: 1.5em;
     }
@@ -275,4 +397,62 @@ main{
         margin-top: .5em;
     }
 
+    .testimonials{
+        display: none;
+    }
+
+    .slide{
+        display: flex;
+        justify-content: center;
+    }
+
+    .cardTestimonial{
+        width: 80%;
+        
+    }
+    
+    .cardTestimonial img{
+        width: 20%;
+    }
+    
+    .cardTestimonial h4{
+        margin-top: .9em;
+        margin-bottom: 1.2em;
+    }
+    
+    .cardTestimonial p{
+        font-size: .9em;
+        color: var(--options-color);
+        margin-bottom: 0em;
+        width: 80%;
+        margin-left: 2em;
+    }
+
 }
+
+@media (max-width: 768px){
+    .navBar li a{
+        font-size: .6em;
+    }
+    .btnNavBar{
+        width: 6em;
+        font-size: .6em;
+    }
+    .boxOne{
+        width: 75%;
+    }
+    .boxTwo{
+        width: 35%;
+    }
+    .sectionTwo{
+        display: flex;
+        flex-direction: column;
+    }
+    .testimonials{
+        flex-direction: column;
+    }
+    .testimonials .cardTestimonial{
+        width: 100%;
+    }
+}
+
